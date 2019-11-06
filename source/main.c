@@ -110,13 +110,11 @@ void button_tick(){
 			}
 			break;
 		case waitOff:
-			if(!(buttonPress == 1){
+			if(!(buttonPress == 1)){
 				state = on;
-			}
-			else{
+		}	else{
 				state = waitOff;
-			}
-			break;
+		}	break;
 	}
 	switch(state){ //actions
 		case off:
@@ -128,10 +126,10 @@ void button_tick(){
 		case compute:
 			break;
 		case up:
-			set_PWM(notes[i]);
+			set_PWM(notes[note]);
 			break;
 		case down:
-			set_PWM(notes[i]);
+			set_PWM(notes[note]);
 			break;
 		case waitUp:
 			break;
@@ -150,7 +148,7 @@ int main(void) {
 	state = off;
     /* Insert your solution below */
     while (1) {
-	button_Tick();
+	button_tick();
     }
     return 0;
 }
